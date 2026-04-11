@@ -9,3 +9,9 @@ Nuestro proyecto se enfoca en la gestión de inventario de una empresa ficticia.
 **Product Owner:** Sebastián Fredy Gonzalez Pereira.
 
 **Dev´s:** Diego Marengo, Ignacio Jorquera, Matias Horvath. 
+## Características de Enfoque
+* **Trazabilidad de Productos:** Seguimiento detallado de cada ítem en bodega.
+* **Niveles de Stock Mínimo:** Control automatizado para evitar falta de productos.
+* **Alertas de Inventario:** Notificaciones automáticas ante niveles críticos.
+* **Control de Vencimientos:** Monitoreo preventivo de fechas de caducidad.
+* **Módulo Contable:** Registro automático de transacciones y ventas.
