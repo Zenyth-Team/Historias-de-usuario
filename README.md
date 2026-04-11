@@ -9,7 +9,7 @@ Nuestro proyecto se enfoca en la gestión de inventario de una empresa ficticia 
 **Product Owner:** Sebastián Fredy Gonzalez Pereira.
 
 **Dev´s:** Diego Marengo, Ignacio Jorquera, Matias Horvath. 
-## Características de Enfoque
+## Características de Enfoque/Funcionales
 
 * **Gestión de productos:** Registro con códigos SKU únicos y validación de precios o cantidades no negativas.
 * **Escaneo de precios:** Sistema de consulta mediante códigos SKU para obtener información rápida del producto.
@@ -26,6 +26,6 @@ Link:
 
 # Stack:
 
-## Requerimientos Funcionales:
+## Desición Arquitectonica: 
 
-## Requert
+## Atributos:
