@@ -22,7 +22,7 @@ Nuestro proyecto se enfoca en la gestión de inventario de una empresa ficticia 
 * **Alertas de stock crítico:** Notificaciones automáticas cuando un producto alcanza el nivel mínimo de existencias definido.
 
 ## Figma
-Link: 
+Link: https://carry-pack-20330348.figma.site/
 
 # Stack:
 
