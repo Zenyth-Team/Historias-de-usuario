@@ -20,3 +20,6 @@ Nuestro proyecto se enfoca en la gestión de inventario de una empresa ficticia.
 * **Generador de órdenes de compra:** Creación automática de documentos PDF con datos prellenados del proveedor ante falta de stock.
 * **Venta a granel:** Soporte para venta de productos por peso o unidades fraccionadas con actualización de inventario.
 * **Alertas de stock crítico:** Notificaciones automáticas cuando un producto alcanza el nivel mínimo de existencias definido.
+
+## Figma
+Link: 
