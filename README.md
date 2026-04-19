@@ -68,7 +68,7 @@ A continuación se presentan los prototipos de baja fidelidad del sistema, vincu
 | [Ver vista de Ajuste por Mermas](./US-10.png) | US-10 |
 
 ## Figma
-Link: https://carry-pack-20330348.figma.site/
+https://carry-pack-20330348.figma.site/
 ## Mockups
 
 A continuación se presentan los prototipos de baja fidelidad del sistema, vinculados a sus respectivas historias de usuario para asegurar la trazabilidad del diseño.
