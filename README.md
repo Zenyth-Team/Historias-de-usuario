@@ -26,16 +26,16 @@ Todas las historias están registradas como GitHub Issues.
 
 | ID | Nombre | Issue |
 |---|---|---|
-| US-01 | Registrar nuevos productos en el inventario | #1 |
-| US-02 | Escanear precios mediante SKU | #2 |
-| US-03 | Visualizar productos más vendidos y gráfica de stock | #3 |
-| US-04 | Identificar ubicación de productos en tienda | #4 |
-| US-05 | Resumen financiero y valor total del inventario | #5 |
-| US-06 | Autoguardado local de inventario y movimientos | #6 |
-| US-07 | Generación automática de órdenes de compra en PDF | #7 |
-| US-08 | Venta de productos a granel | #8 |
-| US-09 | Alertas automáticas de stock crítico | #9 |
-| US-10 | Ajuste manual de inventario por mermas o daños | #10 |
+| US-01 | Registrar nuevos productos en el inventario | #1 (https://github.com/Zenyth-Team/Historias-de-usuario/issues/1) |
+| US-02 | Escanear precios mediante SKU | #2 (https://github.com/Zenyth-Team/Historias-de-usuario/issues/2) |
+| US-03 | Visualizar productos más vendidos y gráfica de stock | #3 (https://github.com/Zenyth-Team/Historias-de-usuario/issues/3) |
+| US-04 | Identificar ubicación de productos en tienda | #4 (https://github.com/Zenyth-Team/Historias-de-usuario/issues/4) |
+| US-05 | Resumen financiero y valor total del inventario | #5 (https://github.com/Zenyth-Team/Historias-de-usuario/issues/5) |
+| US-06 | Autoguardado local de inventario y movimientos | #6 (https://github.com/Zenyth-Team/Historias-de-usuario/issues/6) |
+| US-07 | Generación automática de órdenes de compra en PDF | #7 (https://github.com/Zenyth-Team/Historias-de-usuario/issues/7) |
+| US-08 | Venta de productos a granel | #8 (https://github.com/Zenyth-Team/Historias-de-usuario/issues/8) |
+| US-09 | Alertas automáticas de stock crítico | #9 (https://github.com/Zenyth-Team/Historias-de-usuario/issues/9) |
+| US-10 | Ajuste manual de inventario por mermas o daños | #10 (https://github.com/Zenyth-Team/Historias-de-usuario/issues/10) |
 
 ## Figma
 Link: https://carry-pack-20330348.figma.site/
