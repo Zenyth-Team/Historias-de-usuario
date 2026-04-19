@@ -14,3 +14,4 @@ La columna Prioridad refleja la importancia para las decisiones de arquitectura:
 | REF-07 | Calidad de servicio (Mantenibilidad) | Media | El sistema debe estar organizado en una arquitectura monolítica de tres capas lógicas para facilitar futuras actualizaciones. |
 | REF-08 | Otros no funcionales (Usabilidad) | Media | La interfaz de usuario debe ser responsiva y coincidir fielmente con los mockups diseñados en Figma. |
 | REF-09 | Calidad de servicio (Escalabilidad) | Baja | La base de datos debe ser capaz de soportar el registro y búsqueda de al menos 10.000 SKU distintos sin degradación notoria de rendimiento. |
+| REF-10 | Calidad de servicio (Interoperabilidad) | Baja | El sistema debe permitir la exportación de los resúmenes financieros mensuales a un formato estándar como CSV o Excel. |
