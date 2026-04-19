@@ -15,7 +15,7 @@ Justificación basada en REF priorizados:
 
 ## 2. Diagrama de Arquitectura
 
-![Diagrama de Arquitectura](./diagrama_arquitectura.png)
+![Diagrama de Arquitectura](./Diagrama_arquitectura.png)
 
 
 
