@@ -50,6 +50,23 @@ El sistema gestiona la persistencia de datos mediante las siguientes entidades p
 * **Movimiento/Merma:** ID, producto_id, cantidad, tipo_movimiento (Entrada/Salida/Merma), motivo, fecha.
 * **Proveedor:** ID, nombre_empresa, contacto, categoría_productos.
 
+## Mockups
+
+A continuación se presentan los prototipos de baja fidelidad del sistema, vinculados a sus respectivas historias de usuario para asegurar la trazabilidad del diseño.
+
+| Mockup / Pantalla | Historia de usuario relacionada |
+|---|---|
+| [Ver vista de Registro de Producto](./US-01.png) | US-01 |
+| [Ver vista de Escáner de Precios](./US-02.png) | US-02 |
+| [Ver vista de Dashboard y Gráficas](./US-003.png) | US-03 |
+| [Ver vista de Ubicación en Tienda](./US-04.png) | US-04 |
+| [Ver vista de Resumen Financiero](./US-05.png) | US-05 |
+| [Ver vista de Autoguardado](./US-06.png) | US-06 |
+| [Ver vista de Órdenes de Compra](./US-07.png) | US-07 |
+| [Ver vista de Venta a Granel](./US-08.png) | US-08 |
+| [Ver vista de Alertas de Stock](./US-09.png) | US-09 |
+| [Ver vista de Ajuste por Mermas](./US-10.png) | US-10 |
+
 ## Figma
 Link: https://carry-pack-20330348.figma.site/
 ## Mockups
