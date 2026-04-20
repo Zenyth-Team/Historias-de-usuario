@@ -69,22 +69,6 @@ A continuación se presentan los prototipos de baja fidelidad del sistema, vincu
 
 ## Figma
 https://carry-pack-20330348.figma.site/
-## Mockups
-
-A continuación se presentan los prototipos de baja fidelidad del sistema, vinculados a sus respectivas historias de usuario para asegurar la trazabilidad del diseño.
-
-| Mockup / Pantalla | Historia de usuario relacionada |
-|---|---|
-| [Ver vista de Registro de Producto](./us01.png) | US-01 |
-| [Ver vista de Escáner de Precios](./us02.png) | US-02 |
-| [Ver vista de Dashboard y Gráficas](./us03.png) | US-03 |
-| [Ver vista de Ubicación en Tienda](./us04.png) | US-04 |
-| [Ver vista de Resumen Financiero](./us05.png) | US-05 |
-| [Ver vista de Autoguardado](./us06.png) | US-06 |
-| [Ver vista de Órdenes de Compra](./us07.png) | US-07 |
-| [Ver vista de Venta a Granel](./us08.png) | US-08 |
-| [Ver vista de Alertas de Stock](./us09.png) | US-09 |
-| [Ver vista de Ajuste por Mermas](./us10.png) | US-10 |
 
 ## Decisión Arquitectonica: 
 Se ha optado por una arquitectura monolítica organizada en tres capas lógicas. Esta decisión permite centralizar la lógica de negocio y facilitar el despliegue de la página web:
