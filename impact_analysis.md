@@ -125,26 +125,4 @@ La solución propuesta (Cliente-Servidor + Event-Driven) es la más coherente pa
 * **Consistencia vs. Disponibilidad:** Privilegiamos que el cajero pueda vender siempre, asumiendo el trade-off de que el sistema no será 100% síncrono (Consistencia Eventual). Esto generará posibles descuadres de stock físicos que deberán resolverse administrativamente mediante el Gestor de Sincronización.
 * **Complejidad del Desarrollo:** El front end deja de ser una pagina web simple y pasa a ser una aplicación más compleja, aumentando los tiempos de desarrollo y las pruebas necesarias para manejar estados de desconexión.
 
-## 11. Estilo Arquitectónico
 
-**Estilo adoptado:** Arquitectura de Dos Capas (Client-Server / Fat Client)
-
-**Justificación basada en REFs (Historias de Usuario) priorizados:**
-
-| REF ID | Descripción | Prioridad | Cómo lo aborda el estilo |
-| :--- | :--- | :--- | :--- |
-| **US-11/15** | Respuesta POS < 500ms y modo Offline | Alta | Al usar un "Cliente Pesado", la lógica de negocio y el almacenamiento temporal residen en la terminal, garantizando autonomía total sin internet. |
-| **US-12** | Sincronización automática de datos | Alta | El cliente gestiona la comunicación directa con el servidor de base de datos, enviando ráfagas de datos apenas se detecta el socket activo. |
-| **US-13** | Resolución de conflictos de stock | Alta | La lógica de validación se distribuye: el cliente alerta sobre el quiebre y el servidor procesa la transacción final, asegurando integridad. |
-| **US-14** | Procesamiento de reportes masivos | Alta | La carga pesada se delega totalmente al Servidor (Capa 2), permitiendo que el Cliente (Capa 1) mantenga sus recursos libres para la atención. |
-
-**Explicación textual:** Se ha migrado a una **Arquitectura de Dos Capas** para optimizar la distribución de carga en la ferretería. En este esquema, el **Cliente (Capa 1)** es una aplicación robusta que contiene la interfaz y la lógica de venta, permitiendo operar a alta velocidad y de forma offline mediante una base de datos local. El **Servidor (Capa 2)** actúa como el nodo central de datos y el motor de procesamiento para informes masivos. Esta separación física asegura que el cajero nunca perciba lentitud, ya que los procesos de cierre mensual de millones de registros ocurren en el hardware del servidor, mientras que la terminal de venta se mantiene reactiva y ligera para el escaneo de productos.
-
-## 12. Diseño Arquitectónico
-
-**Descripción de los Niveles (Tiers) del sistema:**
-
-| Capa | Componente | Responsabilidad |
-| :--- | :--- | :--- |
-| **Capa 1: Cliente (Terminal POS)** | Interfaz de Usuario + Lógica de Aplicación + DB Local | Procesa la venta, maneja el stock local de seguridad, valida códigos de barra y gestiona la cola de sincronización asíncrona. |
-| **Capa 2: Servidor (Backend & Data)** | Servidor de BD Central + Report Engine | Almacena el inventario maestro, procesa cierres mensuales pesados y resuelve las peticiones de sincronización enviadas por los clientes. |
