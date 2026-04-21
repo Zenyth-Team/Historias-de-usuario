@@ -29,6 +29,13 @@ Todas las historias están registradas como GitHub Issues.
 | US-08 | Venta de productos a granel | [Issue #8](https://github.com/Zenyth-Team/Historias-de-usuario/issues/8) |
 | US-09 | Alertas automáticas de stock crítico | [Issue #9](https://github.com/Zenyth-Team/Historias-de-usuario/issues/9) |
 | US-10 | Ajuste manual de inventario por mermas o daños | [Issue #10](https://github.com/Zenyth-Team/Historias-de-usuario/issues/10) |
+| US-11 | Reporte de Mermas Mensuales | [Issue #11](https://github.com/Zenyth-Team/Historias-de-usuario/issues/11) |
+| US-12 | Descuentos Temporales | [Issue #12](https://github.com/Zenyth-Team/Historias-de-usuario/issues/12) |
+| US-13 | Login de Cajero | [Issue #13](https://github.com/Zenyth-Team/Historias-de-usuario/issues/13) |
+| US-14 | Ticket de Cambio | [Issue #14](https://github.com/Zenyth-Team/Historias-de-usuario/issues/14) |
+| US-15 | Búsqueda por Nombre | [Issue #15](https://github.com/Zenyth-Team/Historias-de-usuario/issues/15) |
+| US-16 | Respaldo en la Nube | [Issue #16](https://github.com/Zenyth-Team/Historias-de-usuario/issues/16) |
+| US-17 | Historial de Precios | [Issue #17](https://github.com/Zenyth-Team/Historias-de-usuario/issues/17) |
 
 
 ## Requisitos Extrafuncionales
