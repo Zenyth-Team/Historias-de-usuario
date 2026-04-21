@@ -40,15 +40,16 @@ Trazar cambios de prioridad que motiven cambios en decisiones de arquitectura.
 
  
 
-| REF ID | Descripción                    | Prioridad anterior | Prioridad nueva | Cambio / Motivo           | 
+## 2. Nuevas historias de usuario
 
-|--------|--------------------------------|--------------------|-----------------|---------------------------| 
+| ID | Historia de Usuario | Criterios de Aceptación |
+|---|---|---|
+| **US-11** | **Como** cajero,<br>**quiero** seguir registrando ventas sin internet,<br>**para** no parar la atención en la ferretería. | **CA1:** Permitir escanear y cobrar sin red.<br>**CA2:** Guardar la venta en la memoria del PC. |
+| **US-12** | **Como** sistema,<br>**quiero** subir los datos locales apenas vuelva el internet,<br>**para** actualizar el stock sin que nadie lo haga a mano. | **CA1:** Detectar la red y subir datos en segundo plano.<br>**CA2:** No borrar datos locales hasta que el servidor confirme. |
+| **US-13** | **Como** administrador,<br>**quiero** que el sistema resuelva los choques de stock al sincronizar,<br>**para** no cuadrar a mano si se vendió más de la cuenta. | **CA1:** Permitir stock negativo temporal si hubo quiebre.<br>**CA2:** Guardar la venta sin trancar la sincronización del resto. |
+| **US-14** | **Como** dueño,<br>**quiero** sacar reportes gigantes sin pegar el sistema,<br>**para** no molestar al cajero que está atendiendo. | **CA1:** El reporte se hace de fondo sin bloquear la caja.<br>**CA2:** Avisar con un mensaje cuando el archivo esté listo. |
+| **US-15** | **Como** cajero,<br>**quiero** que la caja reaccione al toque (menos de 0.5s),<br>**para** atender rápido a la fila de clientes. | **CA1:** Buscar o escanear productos en menos de 500ms.<br>**CA2:** Mantener esa velocidad aunque el dueño saque reportes pesados. |
 
-| REF-01 | [descripción]                  | Alta               | Alta            | Sin cambio                | 
-
-| REF-03 | [descripción]                  | Media              | Alta            | El cambio lo hace crítico | 
-
-| REF-07 | [nuevo REF derivado del cambio]| —                  | Alta            | Nuevo requisito           | 
 
  
 
