@@ -32,6 +32,8 @@ Todas las historias están registradas como GitHub Issues.
 | US-11 | Venta en Modo Offline | [Issue #11](https://github.com/Zenyth-Team/Historias-de-usuario/issues/17) |
 | US-12 | Sincronización de Datos | [Issue #12](https://github.com/Zenyth-Team/Historias-de-usuario/issues/18) |
 | US-13 | Resolución de Conflictos de Stock | [Issue #13](https://github.com/Zenyth-Team/Historias-de-usuario/issues/19) |
+| US-14 | Procesamiento de Cierre Mensual | [Issue #14](https://github.com/Zenyth-Team/Historias-de-usuario/issues/20) |
+| US-15 | Optimización de Respuesta POS | [Issue #15](https://github.com/Zenyth-Team/Historias-de-usuario/issues/21) |
 
 
 
