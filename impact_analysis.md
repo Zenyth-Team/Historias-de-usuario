@@ -109,8 +109,6 @@ Se necesita una redefinición de los módulos y agregar nuevos para soportar la 
 
 ## 9. Trazabilidad actualizada
 
-## 9. Trazabilidad actualizada
-
 | Historia | REF relacionado | Módulo | Mockup |
 | :--- | :--- | :--- | :--- |
 | US-11 (Venta en Modo Offline) | REF-02 (Disponibilidad) | Ventas (Smart Client) | Mockup POS (Indicador de red) |
