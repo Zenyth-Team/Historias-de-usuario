@@ -4,7 +4,18 @@
 
 ## 1. Cambio solicitado 
 
-[Describir el cambio de requerimiento asignado por el profesor] 
+### Descripción del Cambio de Requerimientos
+
+El cambio solicitado para la evaluación introduce nuevas restricciones operativas y de rendimiento que generan una tensión directa sobre el diseño original del sistema. Se divide en los siguientes puntos:
+
+**1. Cambio Funcional (Operación Offline y Sincronización)**
+Se requiere que el punto de venta (POS) opere completamente offline durante cortes de internet. El sistema debe ser capaz de sincronizar las transacciones pendientes una vez que se recupere la conexión a la red, incluyendo un mecanismo para la resolución automática de conflictos de stock.
+
+**2. Cambio No Funcional (Rendimiento bajo Carga)**
+El módulo de reportes financieros debe tener la capacidad de procesar cierres de mes que involucren millones de registros. Esta carga de procesamiento masivo no debe afectar el tiempo de respuesta del POS activo, el cual está estrictamente restringido a mantenerse por debajo de los 500ms en todo momento.
+
+**3. Tensión Arquitectónica Identificada**
+El modelo actual presenta una limitación crítica: una arquitectura puramente monolítica comparte el mismo proceso y la misma base de datos para todos sus módulos. Exigir un funcionamiento offline con sincronización diferida y, simultáneamente, ejecutar un procesamiento masivo de reportes en segundo plano sin afectar la latencia del POS, genera conflictos de recursos que el diseño original no está preparado para manejar.
 
  
 
