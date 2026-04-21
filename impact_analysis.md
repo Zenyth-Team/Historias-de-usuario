@@ -80,6 +80,8 @@ El cambio de requerimientos afecta a la arquitectura del proyecto de forma defin
 | REF-01 | Alta | Implementación Event-Driven. Con eventos, se manda el cálculo a una cola en segundo plano y se libera el sistema para seguir rindiendo bajo los 500ms. |
 | REF-07 | Alta | Transición de un monolito estricto a un Monolito Modular con procesamiento asíncrono. |
 
+Captura de pantalla 2026-04-21 133650.png
+
 ## 7. Impacto en módulos
 
 Se necesita una redefinición de los módulos y agregar nuevos para soportar la arquitectura asíncrona.
