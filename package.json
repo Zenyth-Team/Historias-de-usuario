@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/Zenyth-Team/Historias-de-usuario#readme",
   "dependencies": {
-    "better-sqlite3": "^12.9.0",
+    "better-sqlite3": "^12.10.0",
     "express": "^5.2.1",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
