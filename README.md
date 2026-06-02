@@ -62,11 +62,12 @@ Enlace a Figma: https://carry-pack-20330348.figma.site/
 ## Diseño Arquitectónico
 Ver detalle de arquitectura y decisiones de diseño en: [arquitectura.md](./arquitectura.md)
 
-## Responsabilidades del Equipo
+
+## Responsabilidades del equipo
 | Integrante | Rol | Ítems de la rúbrica a cargo |
-|---|---|---|
-| Sebastián Fredy Gonzalez Pereira | Scrum Master | Historias de Usuario (Completitud y Correctitud) y Gestión de Issues. |
-| Ignacio Jorquera | Product Owner | Requisitos Extrafuncionales (Catálogo y Priorización) y README. |
-| Diego Marengo | Developer | Diseño Arquitectónico (Estilo y Justificación) en Arquitectura.md. |
-| David Daniel Nuñéz Ruiz | Developer | Descomposición Modular y Diagrama de Arquitectura. |
-| Matias Horvath | Developer | Entidades del Dominio (Completitud) y Mockups (Consistencia). |
+|------------|-----|----------------------------|
+| Diego Marengo | Desarrollador Backend | 2.1 Implementación (Desarrollo API 1) |
+| Sebastián Fredy Gonzalez Pereira | Desarrollador Backend | 2.1 Implementación (Desarrollo API 2) |
+| David Daniel Nuñez Ruiz | Analista QA | 4.1 Pruebas (Diseño casos Thunder Client API 1 y 2) |
+| Ignacio Jorquera | DevOps / Git Master | 3.1 Proceso de desarrollo (Gestión de PRs y Merges a main) |
+| Matias Horvath | Scrum Master / QA Support | 1.1 Análisis (Clarita Review) y Apoyo a 4.1 Pruebas |
