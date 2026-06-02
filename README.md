@@ -29,14 +29,6 @@ Todas las historias están registradas como GitHub Issues.
 | US-08 | Venta de productos a granel | [Issue #8](https://github.com/Zenyth-Team/Historias-de-usuario/issues/8) |
 | US-09 | Alertas automáticas de stock crítico | [Issue #9](https://github.com/Zenyth-Team/Historias-de-usuario/issues/9) |
 | US-10 | Ajuste manual de inventario por mermas o daños | [Issue #10](https://github.com/Zenyth-Team/Historias-de-usuario/issues/10) |
-| US-11 | Venta en Modo Offline | [Issue #11](https://github.com/Zenyth-Team/Historias-de-usuario/issues/17) |
-| US-12 | Sincronización de Datos | [Issue #12](https://github.com/Zenyth-Team/Historias-de-usuario/issues/18) |
-| US-13 | Resolución de Conflictos de Stock | [Issue #13](https://github.com/Zenyth-Team/Historias-de-usuario/issues/19) |
-| US-14 | Procesamiento de Cierre Mensual | [Issue #14](https://github.com/Zenyth-Team/Historias-de-usuario/issues/20) |
-| US-15 | Optimización de Respuesta POS | [Issue #15](https://github.com/Zenyth-Team/Historias-de-usuario/issues/21) |
-
-
-
 
 ## Requisitos Extrafuncionales
 Ver catálogo detallado en: [ReqExtrafuncionales.md](./ReqExtrafuncionales.md)
@@ -70,11 +62,13 @@ Enlace a Figma: https://carry-pack-20330348.figma.site/
 ## Diseño Arquitectónico
 Ver detalle de arquitectura y decisiones de diseño en: [arquitectura.md](./arquitectura.md)
 
-## Responsabilidades del Equipo
+
+## Responsabilidades del equipo
 | Integrante | Rol | Ítems de la rúbrica a cargo |
-|---|---|---|
-| David Daniel Nuñéz Ruiz | Scrum Master | Historias de Usuario (Completitud y Correctitud) y Gestión de Issues. |
-| Ignacio Jorquera | Product Owner | Requisitos Extrafuncionales (Catálogo y Priorización) y README. |
-| Diego Marengo | Developer | Diseño Arquitectónico (Estilo y Justificación) en Arquitectura.md. |
-| Sebastián Fredy Gonzalez Pereira | Developer | Descomposición Modular y Diagrama de Arquitectura. |
-| Matias Horvath | Developer | Entidades del Dominio (Completitud) y Mockups (Consistencia). |
+|------------|-----|----------------------------|
+| Matias Horvath | Scrum Master / QA Support | 1.1 Análisis (Clarita Review) y Apoyo a 4.1 Pruebas |
+| Ignacio Jorquera | DevOps / Git Master | 3.1 Proceso de desarrollo (Gestión de PRs y Merges a main) |
+| Diego Marengo | Desarrollador Backend | 2.1 Implementación (Desarrollo API 1) |
+| Sebastián Fredy Gonzalez Pereira | Desarrollador Backend | 2.1 Implementación (Desarrollo API 2) |
+| David Daniel Nuñez Ruiz | Analista QA | 4.1 Pruebas (Diseño casos Thunder Client API 1 y 2) |
+
