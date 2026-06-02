@@ -66,8 +66,9 @@ Ver detalle de arquitectura y decisiones de diseño en: [arquitectura.md](./arqu
 ## Responsabilidades del equipo
 | Integrante | Rol | Ítems de la rúbrica a cargo |
 |------------|-----|----------------------------|
+| Matias Horvath | Scrum Master / QA Support | 1.1 Análisis (Clarita Review) y Apoyo a 4.1 Pruebas |
+| Ignacio Jorquera | DevOps / Git Master | 3.1 Proceso de desarrollo (Gestión de PRs y Merges a main) |
 | Diego Marengo | Desarrollador Backend | 2.1 Implementación (Desarrollo API 1) |
 | Sebastián Fredy Gonzalez Pereira | Desarrollador Backend | 2.1 Implementación (Desarrollo API 2) |
 | David Daniel Nuñez Ruiz | Analista QA | 4.1 Pruebas (Diseño casos Thunder Client API 1 y 2) |
-| Ignacio Jorquera | DevOps / Git Master | 3.1 Proceso de desarrollo (Gestión de PRs y Merges a main) |
-| Matias Horvath | Scrum Master / QA Support | 1.1 Análisis (Clarita Review) y Apoyo a 4.1 Pruebas |
+
