@@ -1,4 +1,3 @@
-// productosHU1y2.js
 const express = require('express');
 const router = express.Router();
 const db = require('./db'); // Comparte la misma conexión
