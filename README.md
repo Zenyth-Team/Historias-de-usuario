@@ -72,3 +72,6 @@ Ver detalle de arquitectura y decisiones de diseño en: [arquitectura.md](./arqu
 | Sebastián Fredy Gonzalez Pereira | Desarrollador Backend | 2.1 Implementación (Desarrollo API 2) |
 | David Daniel Nuñez Ruiz | Analista QA | 4.1 Pruebas (Diseño casos Thunder Client API 1 y 2) |
 
+
+
+
