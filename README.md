@@ -64,14 +64,13 @@ Ver detalle de arquitectura y decisiones de diseño en: [arquitectura.md](./arqu
 
 
 ## Responsabilidades del equipo
-| Integrante | Rol | Ítems de la rúbrica a cargo |
-|------------|-----|----------------------------|
-| Matias Horvath | Scrum Master / QA Support | 1.1 Análisis (Clarita Review) y Apoyo a 4.1 Pruebas |
-| Ignacio Jorquera | DevOps / Git Master | 3.1 Proceso de desarrollo (Gestión de PRs y Merges a main) |
-| Diego Marengo | Desarrollador Backend | 2.1 Implementación (Desarrollo API 1) |
-| Sebastián Fredy Gonzalez Pereira | Desarrollador Backend | 2.1 Implementación (Desarrollo API 2) |
-| David Daniel Nuñez Ruiz | Analista QA | 4.1 Pruebas (Diseño casos Thunder Client API 1 y 2) |
-
+| Integrante | Rol(es) | Ítems de la rúbrica a cargo |
+|------------|---------|-----------------------------|
+| Matias Horvath | Scrum Master | [cite_start]2.1 Modelo de dominio, 2.2 Casos de uso, 2.3 Especificación de HU, 2.4 Diagrama de estados, y Demostración de la HU[cite: 99, 115, 121]. |
+| Ignacio Jorquera | Arquitecto | [cite_start]3.1 Despliegue y comp., 3.2 Componentes (Interfaces), 3.3 Diagrama de secuencia, y Explicación de la arquitectura[cite: 100, 115, 121]. |
+| David Daniel Nuñez Ruiz | Developer | [cite_start]1.1 HU completa (Desarrollo), 1.2 Instalación y ejecución, y Explicación del código[cite: 101, 115, 121]. |
+| Graham | Quality Assurance | [cite_start]4.1 Casos de prueba, y Demostración de pruebas en el sistema[cite: 102, 115, 121]. |
+| Diego Marengo | Technical Lead | [cite_start]1.3 GitHub workflow (Ramas y PRs), 5.1 Deuda técnica / code smells, y Presentación del repositorio[cite: 101, 115, 121]. |
 
 
 
