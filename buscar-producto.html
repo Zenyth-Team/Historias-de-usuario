@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Productos - Ferretería</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 600px;
+        }
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .search-header {
+            background: white;
+            border-radius: 12px 12px 0 0;
+            padding: 30px;
+        }
+        .btn-buscar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            font-weight: 600;
+        }
+        .btn-buscar:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        .producto-card {
+            display: none;
+            padding: 25px;
+            background: white;
+            border-radius: 12px;
+            margin-top: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .producto-card.show {
+            display: block;
+            animation: slideIn 0.3s ease-out;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .alert {
+            display: none;
+            border-radius: 8px;
+            margin-top: 20px;
+            animation: slideIn 0.3s ease-out;
+        }
+        .alert.show {
+            display: block;
+        }
+        .field-row {
+            margin-bottom: 15px;
+        }
+        .field-label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+        .field-value {
+            color: #667eea;
+            font-size: 1.1rem;
+            word-break: break-word;
+        }
+        .spinner-wrapper {
+            display: none;
+            text-align: center;
+            margin-top: 15px;
+        }
+        .spinner-wrapper.loading {
+            display: block;
+        }
+        h1 {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Buscador de Productos</h1>
+
+        <div class="card search-header">
+            <div class="row mb-3">
+                <div class="col-md-9">
+                    <label for="inputBusqueda" class="form-label fw-600">Ingresa SKU o Nombre del Producto</label>
+                    <input 
+                        type="text" 
+                        class="form-control form-control-lg" 
+                        id="inputBusqueda" 
+                        placeholder="Ej: FER-001 o Martillo 16oz"
+                        autocomplete="off"
+                    >
+                </div>
+                <div class="col-md-3 d-flex align-items-end">
+                    <button class="btn btn-buscar btn-lg w-100" id="btnBuscar">
+                        Buscar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Spinner de carga -->
+        <div class="spinner-wrapper" id="spinnerCarga">
+            <div class="spinner-border text-white" role="status">
+                <span class="visually-hidden">Buscando...</span>
+            </div>
+            <p class="text-white mt-2">Buscando producto...</p>
+        </div>
+
+        <!-- Alerta de error -->
+        <div class="alert alert-danger" role="alert" id="alertaError">
+            <strong id="errorTitulo">Error</strong>
+            <p id="errorMensaje" class="mb-0"></p>
+        </div>
+
+        <!-- Card del producto encontrado -->
+        <div class="producto-card" id="productCard">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="field-row">
+                        <div class="field-label">SKU</div>
+                        <div class="field-value" id="productSku">-</div>
+                    </div>
+                    <div class="field-row">
+                        <div class="field-label">Nombre</div>
+                        <div class="field-value" id="productNombre">-</div>
+                    </div>
+                    <div class="field-row">
+                        <div class="field-label">Precio</div>
+                        <div class="field-value" id="productPrecio">-</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="field-row">
+                        <div class="field-label">Estado</div>
+                        <div class="field-value" id="productEstado">-</div>
+                    </div>
+                    <div class="field-row">
+                        <div class="field-label">Ubicación</div>
+                        <div class="field-value" id="productUbicacion">-</div>
+                    </div>
+                    <div class="field-row">
+                        <div class="field-label">Stock</div>
+                        <div class="field-value" id="productStock">-</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuración de la API
+        const API_BASE_URL = 'http://localhost:3000/api/v1';
+
+        // Referencias a elementos del DOM
+        const inputBusqueda = document.getElementById('inputBusqueda');
+        const btnBuscar = document.getElementById('btnBuscar');
+        const spinnerCarga = document.getElementById('spinnerCarga');
+        const alertaError = document.getElementById('alertaError');
+        const productCard = document.getElementById('productCard');
+        const errorTitulo = document.getElementById('errorTitulo');
+        const errorMensaje = document.getElementById('errorMensaje');
+
+        /**
+         * Función para limpiar los mensajes de error y las tarjetas
+         */
+        function limpiarResultados() {
+            alertaError.classList.remove('show');
+            productCard.classList.remove('show');
+            spinnerCarga.classList.remove('loading');
+        }
+
+        /**
+         * Función para mostrar un mensaje de error en la pantalla
+         * @param {string} titulo - Título del error
+         * @param {string} mensaje - Mensaje descriptivo del error
+         */
+        function mostrarError(titulo, mensaje) {
+            errorTitulo.textContent = titulo;
+            errorMensaje.textContent = mensaje;
+            alertaError.classList.add('show');
+            productCard.classList.remove('show');
+            spinnerCarga.classList.remove('loading');
+        }
+
+        /**
+         * Función para mostrar los datos del producto en la tarjeta
+         * @param {Object} producto - Objeto con los datos del producto
+         */
+        function mostrarProducto(producto) {
+            document.getElementById('productSku').textContent = producto.sku || '-';
+            document.getElementById('productNombre').textContent = producto.nombre || '-';
+            document.getElementById('productPrecio').textContent = producto.precio ? `$${producto.precio.toFixed(2)}` : '-';
+            document.getElementById('productEstado').textContent = producto.estado || '-';
+            document.getElementById('productUbicacion').textContent = producto.ubicacion || 'No asignada';
+            document.getElementById('productStock').textContent = producto.stock || '-';
+
+            alertaError.classList.remove('show');
+            productCard.classList.add('show');
+            spinnerCarga.classList.remove('loading');
+        }
+
+        /**
+         * Función principal para realizar la búsqueda del producto
+         * Válida el input, realiza la petición HTTP y maneja los diferentes casos de respuesta
+         */
+        async function buscarProducto() {
+            const termino = inputBusqueda.value.trim();
+
+            // Validación: el campo no puede estar vacío
+            if (!termino) {
+                mostrarError(
+                    'Campo vacío',
+                    'Debe proporcionar un SKU o nombre para realizar la búsqueda'
+                );
+                return;
+            }
+
+            limpiarResultados();
+            spinnerCarga.classList.add('loading');
+
+            try {
+                // Intentar buscar por SKU primero
+                const url = `${API_BASE_URL}/productos/sku/${encodeURIComponent(termino)}`;
+                const respuesta = await fetch(url);
+
+                // Procesar la respuesta según el código de estado HTTP
+                if (respuesta.ok) {
+                    // Caso 200: Producto encontrado exitosamente
+                    const datos = await respuesta.json();
+                    mostrarProducto(datos);
+                } else if (respuesta.status === 404) {
+                    // Caso 404: Producto no encontrado
+                    mostrarError(
+                        'Producto no encontrado',
+                        'El SKU o nombre ingresado no existe en la base de datos'
+                    );
+                } else if (respuesta.status === 400) {
+                    // Caso 400: Validación de parámetros fallida
+                    const datos = await respuesta.json();
+                    mostrarError(
+                        'Parámetro inválido',
+                        datos.mensaje || 'El formato del SKU es inválido. Debe tener entre 3 y 15 caracteres alfanuméricos.'
+                    );
+                } else if (respuesta.status === 409) {
+                    // Caso 409: Producto inactivo
+                    const datos = await respuesta.json();
+                    mostrarError(
+                        'Producto inactivo',
+                        datos.mensaje || 'El producto se encuentra inactivo y no está disponible para consulta.'
+                    );
+                } else if (respuesta.status === 500) {
+                    // Caso 500: Error interno del servidor
+                    const datos = await respuesta.json();
+                    mostrarError(
+                        'Error del servidor',
+                        datos.mensaje || 'Error interno al consultar la ubicación del producto. Intenta más tarde.'
+                    );
+                } else {
+                    // Caso genérico: otro error inesperado
+                    mostrarError(
+                        'Error desconocido',
+                        'Ocurrió un error inesperado. Por favor intenta de nuevo.'
+                    );
+                }
+            } catch (error) {
+                console.error('Error en la petición:', error);
+                mostrarError(
+                    'Error de conexión',
+                    'No se pudo conectar con el servidor. Verifica que esté en línea.'
+                );
+            }
+        }
+
+        /**
+         * Event listeners para activar la búsqueda
+         */
+        // Click en el botón "Buscar"
+        btnBuscar.addEventListener('click', buscarProducto);
+
+        // Presionar Enter en el input
+        inputBusqueda.addEventListener('keypress', (evento) => {
+            if (evento.key === 'Enter') {
+                buscarProducto();
+            }
+        });
+
+        // Limpiar el estado cuando el usuario escribe en el input
+        inputBusqueda.addEventListener('input', limpiarResultados);
+    </script>
+</body>
+</html>
