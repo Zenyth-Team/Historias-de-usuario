@@ -4,7 +4,6 @@ const db      = require('./db');
 
 // Importar los módulos de las APIs independientes
 const API2 = require('./API2');
-const API1 = require('./API1');
 
 const app = express();
 app.use(express.json());
@@ -18,7 +17,7 @@ const swaggerSpec = swaggerJsdoc({
     info: { title: 'API Inventario Ferretería', version: '1.0.0' },
     servers: [{ url: 'http://localhost:3000' }]
   },
-  apis: ['./index.js', './API2.js', './API1.js'] // Swagger leerá la documentación de todos los archivos
+  apis: ['./index.js', './API2.js'] // Swagger leerá la documentación de todos los archivos
 });
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
@@ -43,9 +42,8 @@ app.post('/secciones', (req, res) => {
 // ==========================================
 // ENLAZAR LAS APIS DE LAS OTRAS HISTORIAS DE USUARIO
 // ==========================================
-// Todo lo que esté en API2 y API1 tendrá el prefijo /api/v1
+// Todo lo que esté en API2 tendrá el prefijo /api/v1
 app.use('/api/v1', API2);
-app.use('/api/v1', API1);
 
 
 // --- INICIO ÚNICO DEL SERVIDOR ---

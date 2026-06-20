@@ -120,4 +120,187 @@ router.get('/productos/sku/:sku', (req, res) => {
     }
 });
 
+/**
+ * @swagger
+ * /api/v1/productos/{sku}:
+ *   put:
+ *     summary: Actualizar la información de un producto por SKU
+ *     description: Actualiza el nombre, descripción, precio y stock de un producto existente identificado por su código SKU.
+ *     parameters:
+ *       - in: path
+ *         name: sku
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: El código SKU del producto (3-15 caracteres, alfanumérico).
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - nombre
+ *               - precio
+ *               - stock
+ *             properties:
+ *               nombre:
+ *                 type: string
+ *               descripcion:
+ *                 type: string
+ *               precio:
+ *                 type: number
+ *               stock:
+ *                 type: integer
+ *     responses:
+ *       200:
+ *         description: Producto actualizado exitosamente.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 id:
+ *                   type: integer
+ *                 sku:
+ *                   type: string
+ *                 nombre:
+ *                   type: string
+ *                 descripcion:
+ *                   type: string
+ *                 precio:
+ *                   type: number
+ *                 stock:
+ *                   type: integer
+ *                 estado:
+ *                   type: string
+ *       400:
+ *         description: Faltan campos obligatorios, valores incorrectos o formato de SKU inválido.
+ *       404:
+ *         description: Producto no encontrado.
+ *       500:
+ *         description: Error interno del servidor.
+ */
+router.put('/productos/:sku', (req, res) => {
+    try {
+        const { sku } = req.params;
+        const skuUpper = sku.toUpperCase();
+
+        // Validación de Formato de SKU (3-15 caracteres, alfanumérico y guiones)
+        const formatoValido = /^[A-Z0-9-]+$/.test(skuUpper);
+        if (!formatoValido || skuUpper.length < 3 || skuUpper.length > 15) {
+            return res.status(400).json({
+                error: "Bad Request",
+                mensaje: "El formato del SKU es inválido o tiene una longitud incorrecta."
+            });
+        }
+
+        const { nombre, descripcion, precio, stock } = req.body;
+
+        // Validaciones del cuerpo de la petición
+        if (!nombre || precio === undefined || stock === undefined) {
+            return res.status(400).json({ error: "Faltan campos obligatorios en el JSON" });
+        }
+
+        if (isNaN(precio) || precio < 0 || isNaN(stock) || stock < 0) {
+            return res.status(400).json({ error: "El precio o stock no pueden ser negativos" });
+        }
+
+        const statement = db.prepare(`
+            UPDATE productos 
+            SET nombre = ?, descripcion = ?, precio = ?, stock = ? 
+            WHERE sku = ?
+        `);
+        const result = statement.run(nombre, descripcion, precio, stock, skuUpper);
+
+        if (result.changes === 0) {
+            return res.status(404).json({
+                error: "Not Found",
+                mensaje: "El producto no fue encontrado."
+            });
+        }
+
+        const updatedProducto = db.prepare('SELECT id, sku, nombre, descripcion, precio, stock, estado FROM productos WHERE sku = ?').get(skuUpper);
+        return res.status(200).json(updatedProducto);
+
+    } catch (error) {
+        console.error("Error en el servidor:", error);
+        return res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
+/**
+ * @swagger
+ * /api/v1/productos/{sku}:
+ *   delete:
+ *     summary: Realizar el borrado lógico de un producto por SKU
+ *     description: Cambia el estado del producto a 'Inactivo' para darlo de baja lógicamente sin eliminarlo físicamente de la base de datos.
+ *     parameters:
+ *       - in: path
+ *         name: sku
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: El código SKU del producto (3-15 caracteres, alfanumérico).
+ *     responses:
+ *       200:
+ *         description: Producto dado de baja lógicamente con éxito.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensaje:
+ *                   type: string
+ *                 sku:
+ *                   type: string
+ *                 estado:
+ *                   type: string
+ *       400:
+ *         description: Formato de SKU inválido.
+ *       404:
+ *         description: Producto no encontrado.
+ *       500:
+ *         description: Error interno del servidor.
+ */
+router.delete('/productos/:sku', (req, res) => {
+    try {
+        const { sku } = req.params;
+        const skuUpper = sku.toUpperCase();
+
+        // Validación de Formato de SKU (3-15 caracteres, alfanumérico y guiones)
+        const formatoValido = /^[A-Z0-9-]+$/.test(skuUpper);
+        if (!formatoValido || skuUpper.length < 3 || skuUpper.length > 15) {
+            return res.status(400).json({
+                error: "Bad Request",
+                mensaje: "El formato del SKU es inválido o tiene una longitud incorrecta."
+            });
+        }
+
+        const statement = db.prepare(`
+            UPDATE productos 
+            SET estado = 'Inactivo' 
+            WHERE sku = ?
+        `);
+        const result = statement.run(skuUpper);
+
+        if (result.changes === 0) {
+            return res.status(404).json({
+                error: "Not Found",
+                mensaje: "El producto no fue encontrado."
+            });
+        }
+
+        return res.status(200).json({
+            mensaje: "Producto dado de baja lógicamente",
+            sku: skuUpper,
+            estado: "Inactivo"
+        });
+
+    } catch (error) {
+        console.error("Error en el servidor:", error);
+        return res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
 module.exports = router;

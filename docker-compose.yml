@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  api-ferreteria:
+    build: .
+    container_name: api-ferreteria
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./datos.db:/usr/src/app/datos.db
+    restart: always
