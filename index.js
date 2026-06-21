@@ -1,4 +1,12 @@
 // index.js
+try {
+  if (typeof process.loadEnvFile === 'function') {
+    process.loadEnvFile();
+  }
+} catch (error) {
+  // Ignorar si el archivo .env no existe
+}
+
 const express = require('express');
 const db      = require('./db');
 

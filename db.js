@@ -1,6 +1,6 @@
 // db.js
 const Database = require('better-sqlite3');
-const db = new Database('datos.db');
+const db = new Database(process.env.DB_PATH || 'datos.db');
 
 // Inicializa las tablas de ambas Historias de Usuario
 db.exec(`

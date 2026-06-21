@@ -3,3 +3,4 @@ node_modules/
 .gemini/
 config.yaml
 openspec/changes/hu-02-registro-productos/
+.env

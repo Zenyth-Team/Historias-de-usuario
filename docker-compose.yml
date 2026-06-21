@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   api-ferreteria:
     build:
@@ -6,19 +8,20 @@ services:
     image: historias-de-usuario-api-ferreteria:latest
     container_name: api-ferreteria
     environment:
-      NODE_ENV: production
-      PORT: 3000
+      - PORT=${PORT:-3000}
+      - DB_PATH=${DB_PATH:-datos.db}
+      - NODE_ENV=production
     ports:
-      - "3000:3000"
+      - "${PORT:-3000}:${PORT:-3000}"
     volumes:
-      - ./datos.db:/usr/src/app/datos.db
+      - ./${DB_PATH:-datos.db}:/usr/src/app/${DB_PATH:-datos.db}
     healthcheck:
       test: ["CMD-SHELL", "wget -qO- http://localhost:3000/health || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 5
       start_period: 10s
-    restart: unless-stopped
+    restart: always
 
   web-ferreteria:
     build:
