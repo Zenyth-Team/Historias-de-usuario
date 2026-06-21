@@ -48,16 +48,16 @@ Enlace a Figma: https://carry-pack-20330348.figma.site/
 
 | Mockup / Pantalla | Historia de usuario relacionada |
 |---|---|
-| [Ver vista de Registro de Producto](./US-01.png) | US-01 |
-| [Ver vista de Escáner de Precios](./US-02.png) | US-02 |
-| [Ver vista de Dashboard y Gráficas](./US-03.png) | US-03 |
-| [Ver vista de Ubicación en Tienda](./US-04.png) | US-04 |
-| [Ver vista de Resumen Financiero](./US-05.png) | US-05 |
-| [Ver vista de Autoguardado](./US-06.png) | US-06 |
-| [Ver vista de Órdenes de Compra](./US-07.png) | US-07 |
-| [Ver vista de Venta a Granel](./US-08.png) | US-08 |
-| [Ver vista de Alertas de Stock](./US-09.png) | US-09 |
-| [Ver vista de Ajuste por Mermas](./US-10.png) | US-10 |
+| [Ver vista de Registro de Producto](pngs/US-01.png) | US-01 |
+| [Ver vista de Escáner de Precios](pngs/US-02.png) | US-02 |
+| [Ver vista de Dashboard y Gráficas](pngs/US-003.png) | US-03 |
+| [Ver vista de Ubicación en Tienda](pngs/US-04.png) | US-04 |
+| [Ver vista de Resumen Financiero](pngs/US-05.png) | US-05 |
+| [Ver vista de Autoguardado](pngs/US-06.png) | US-06 |
+| [Ver vista de Órdenes de Compra](pngs/US-07.png) | US-07 |
+| [Ver vista de Venta a Granel](pngs/US-08.png) | US-08 |
+| [Ver vista de Alertas de Stock](pngs/US-09.png) | US-09 |
+| [Ver vista de Ajuste por Mermas](pngs/US-10.png) | US-10 |
 
 ## Diseño Arquitectónico
 Ver detalle de arquitectura y decisiones de diseño en: [arquitectura.md](./arquitectura.md)
