@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  api-ferreteria:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: historias-de-usuario-api-ferreteria:latest
+    container_name: api-ferreteria
+    environment:
+      - PORT=${PORT:-3000}
+      - DB_PATH=${DB_PATH:-datos.db}
+      - NODE_ENV=production
+    ports:
+      - "${PORT:-3000}:${PORT:-3000}"
+    volumes:
+      - ./${DB_PATH:-datos.db}:/usr/src/app/${DB_PATH:-datos.db}
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: always
+
+  web-ferreteria:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    image: historias-de-usuario-web-ferreteria:latest
+    container_name: web-ferreteria
+    ports:
+      - "8080:80"
+    depends_on:
+      api-ferreteria:
+        condition: service_healthy
+    restart: unless-stopped

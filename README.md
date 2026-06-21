@@ -48,20 +48,74 @@ Enlace a Figma: https://carry-pack-20330348.figma.site/
 
 | Mockup / Pantalla | Historia de usuario relacionada |
 |---|---|
-| [Ver vista de Registro de Producto](./US-01.png) | US-01 |
-| [Ver vista de Escáner de Precios](./US-02.png) | US-02 |
-| [Ver vista de Dashboard y Gráficas](./US-03.png) | US-03 |
-| [Ver vista de Ubicación en Tienda](./US-04.png) | US-04 |
-| [Ver vista de Resumen Financiero](./US-05.png) | US-05 |
-| [Ver vista de Autoguardado](./US-06.png) | US-06 |
-| [Ver vista de Órdenes de Compra](./US-07.png) | US-07 |
-| [Ver vista de Venta a Granel](./US-08.png) | US-08 |
-| [Ver vista de Alertas de Stock](./US-09.png) | US-09 |
-| [Ver vista de Ajuste por Mermas](./US-10.png) | US-10 |
+| [Ver vista de Registro de Producto](pngs/US-01.png) | US-01 |
+| [Ver vista de Escáner de Precios](pngs/US-02.png) | US-02 |
+| [Ver vista de Dashboard y Gráficas](pngs/US-003.png) | US-03 |
+| [Ver vista de Ubicación en Tienda](pngs/US-04.png) | US-04 |
+| [Ver vista de Resumen Financiero](pngs/US-05.png) | US-05 |
+| [Ver vista de Autoguardado](pngs/US-06.png) | US-06 |
+| [Ver vista de Órdenes de Compra](pngs/US-07.png) | US-07 |
+| [Ver vista de Venta a Granel](pngs/US-08.png) | US-08 |
+| [Ver vista de Alertas de Stock](pngs/US-09.png) | US-09 |
+| [Ver vista de Ajuste por Mermas](pngs/US-10.png) | US-10 |
 
 ## Diseño Arquitectónico
 Ver detalle de arquitectura y decisiones de diseño en: [arquitectura.md](./arquitectura.md)
 
+
+## Instrucciones de instalacion y ejecucion
+
+### Requisitos previos
+- Node.js 20 o superior para ejecucion local.
+- Docker Desktop con Docker Compose para ejecucion con contenedores.
+- Puerto `3000` disponible para la API.
+- Puerto `8080` disponible para la interfaz web en Docker.
+
+### Variables de entorno
+| Variable | Descripcion | Valor por defecto |
+|----------|-------------|-------------------|
+| `PORT` | Puerto interno usado por Express | `3000` |
+| `NODE_ENV` | Ambiente de ejecucion de Node.js | `production` en Docker |
+
+### Instalacion y ejecucion sin Docker
+```bash
+npm install
+npm start
+```
+
+Luego abrir:
+- API / Swagger: `http://localhost:3000/api-docs`
+- Healthcheck: `http://localhost:3000/health`
+- Interfaz local: abrir `buscar-producto.html` en el navegador.
+
+### Instalacion y ejecucion con Docker
+La implementacion Docker separa la aplicacion en dos capas:
+- `api-ferreteria`: backend Express + SQLite, expuesto en `http://localhost:3000`.
+- `web-ferreteria`: frontend HTML servido por Nginx, expuesto en `http://localhost:8080`.
+
+```bash
+docker compose up -d --build
+```
+
+Verificar contenedores:
+```bash
+docker compose ps
+```
+
+Ver logs del backend:
+```bash
+docker logs api-ferreteria
+```
+
+Detener la aplicacion:
+```bash
+docker compose down
+```
+
+### Bonus de contenedores
+- Contenedores: si, archivo `docker-compose.yml` funcional con separacion por capas en dos contenedores.
+- Backend: Express + SQLite.
+- Frontend: Nginx sirviendo `buscar-producto.html`.
 
 ## Responsabilidades del equipo
 | Integrante | Rol(es) | Ítems de la rúbrica a cargo |
