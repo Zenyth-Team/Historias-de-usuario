@@ -8,6 +8,26 @@ const API2 = require('./API2');
 const app = express();
 app.use(express.json());
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(204);
+  }
+
+  next();
+});
+
+app.get('/', (req, res) => {
+  res.redirect('/api-docs');
+});
+
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok', service: 'api-ferreteria' });
+});
+
 // --- CONFIGURACIÓN DE SWAGGER ---
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
@@ -47,6 +67,7 @@ app.use('/api/v1', API2);
 
 
 // --- INICIO ÚNICO DEL SERVIDOR ---
-app.listen(3000, () => {
-  console.log("Servidor corriendo en el puerto 3000 con todas las APIs integradas modularmente.");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en el puerto ${PORT} con todas las APIs integradas modularmente.`);
 });

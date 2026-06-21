@@ -63,6 +63,60 @@ Enlace a Figma: https://carry-pack-20330348.figma.site/
 Ver detalle de arquitectura y decisiones de diseño en: [arquitectura.md](./arquitectura.md)
 
 
+## Instrucciones de instalacion y ejecucion
+
+### Requisitos previos
+- Node.js 20 o superior para ejecucion local.
+- Docker Desktop con Docker Compose para ejecucion con contenedores.
+- Puerto `3000` disponible para la API.
+- Puerto `8080` disponible para la interfaz web en Docker.
+
+### Variables de entorno
+| Variable | Descripcion | Valor por defecto |
+|----------|-------------|-------------------|
+| `PORT` | Puerto interno usado por Express | `3000` |
+| `NODE_ENV` | Ambiente de ejecucion de Node.js | `production` en Docker |
+
+### Instalacion y ejecucion sin Docker
+```bash
+npm install
+npm start
+```
+
+Luego abrir:
+- API / Swagger: `http://localhost:3000/api-docs`
+- Healthcheck: `http://localhost:3000/health`
+- Interfaz local: abrir `buscar-producto.html` en el navegador.
+
+### Instalacion y ejecucion con Docker
+La implementacion Docker separa la aplicacion en dos capas:
+- `api-ferreteria`: backend Express + SQLite, expuesto en `http://localhost:3000`.
+- `web-ferreteria`: frontend HTML servido por Nginx, expuesto en `http://localhost:8080`.
+
+```bash
+docker compose up -d --build
+```
+
+Verificar contenedores:
+```bash
+docker compose ps
+```
+
+Ver logs del backend:
+```bash
+docker logs api-ferreteria
+```
+
+Detener la aplicacion:
+```bash
+docker compose down
+```
+
+### Bonus de contenedores
+- Contenedores: si, archivo `docker-compose.yml` funcional con separacion por capas en dos contenedores.
+- Backend: Express + SQLite.
+- Frontend: Nginx sirviendo `buscar-producto.html`.
+
 ## Responsabilidades del equipo
 | Integrante | Rol | Ítems de la rúbrica a cargo |
 |------------|-----|----------------------------|

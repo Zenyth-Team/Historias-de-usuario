@@ -1,7 +1,8 @@
 node_modules
 npm-debug.log
 .git
+.vscode
 .gemini
 openspec
-Dockerfile
-docker-compose.yml
+API-Desplegada
+Figma

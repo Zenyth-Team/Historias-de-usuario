@@ -7,8 +7,10 @@ const db = require('./db'); // Comparte la misma conexión
  * /api/v1/productos:                                                                                                                         
  *   post:                                                                                                                                    
  *     summary: Registrar un nuevo producto en el inventario                                                                                  
- *     description: Crea un nuevo registro de producto en la base de datos con un código SKU único, nombre, descripción opcional, precio y    
-  stock inicial. El producto se registra con estado 'Activo' por defecto.                                                                ----------
+ *     description: >
+ *       Crea un nuevo registro de producto en la base de datos con un codigo SKU unico,
+ *       nombre, descripcion opcional, precio y stock inicial. El producto se registra
+ *       con estado 'Activo' por defecto.
  *     requestBody:                                                                                                                           
  *       required: true                                                                                                                       
  *       content:                                                                                                                             
