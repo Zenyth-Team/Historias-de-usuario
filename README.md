@@ -70,7 +70,7 @@ Ver detalle de arquitectura y decisiones de diseño en: [arquitectura.md](./arqu
 | Diagrama de casos de uso           | ![CasosUso](pngs/casos_uso.png) |
 | Especificación de HU               | ./EspecificacionHU.md       |
 | Diagrama de estados                | ![Estados](pngs/estados.png) |
-| Diagrama de despliegue y comp.     | ![Despliegue](pngs/despliegue.png) |
+| Diagrama de despliegue y comp.     | ![Despliegue](despliegue.png.png) |
 | Diagrama de componentes            | ![Componentes](pngs/componentes.png) |
 | Diagrama de secuencia              | ![Secuencia](secuencia.png.png) |
 | Casos de prueba                    | ./CasosDePrueba.md          |
