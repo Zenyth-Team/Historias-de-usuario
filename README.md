@@ -137,6 +137,6 @@ docker compose down
 | Ignacio Jorquera | Scrum Master | 2.1 Modelo de dominio, 2.2 Casos de uso, 2.3 Especificación de HU, 2.4 Diagrama de estados, y Demostración de la HU. |
 | Matias Horvath  | Arquitecto | 3.1 Despliegue y comp., 3.2 Componentes (Interfaces), 3.3 Diagrama de secuencia, y Explicación de la arquitectura. |
 | David Daniel Nuñez Ruiz | Developer | 1.1 HU completa (Desarrollo), 1.2 Instalación y ejecución, y Explicación del código. |
-| Graham | Quality Assurance | 4.1 Casos de prueba, y Demostración de pruebas en el sistema. |
+| Graham | Technical Lead y Quality Assurance | 4.1 Casos de prueba, y Demostración de pruebas en el sistema. |
 | Diego Marengo | Technical Lead | 1.3 GitHub workflow (Ramas y PRs), 5.1 Deuda técnica / code smells, y Presentación del repositorio. |
 
