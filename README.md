@@ -63,6 +63,20 @@ Enlace a Figma: https://carry-pack-20330348.figma.site/
 Ver detalle de arquitectura y decisiones de diseño en: [arquitectura.md](./arquitectura.md)
 
 
+## Artefactos del proyecto
+| Artefacto                          | Ubicación / enlace          |
+|------------------------------------|-----------------------------|
+| Modelo de dominio                  | ![Dominio](pngs/dominio.png) |
+| Diagrama de casos de uso           | ![CasosUso](pngs/casos_uso.png) |
+| Especificación de HU               | ./EspecificacionHU.md       |
+| Diagrama de estados                | ![Estados](pngs/estados.png) |
+| Diagrama de despliegue y comp.     | ![Despliegue](pngs/despliegue.png) |
+| Diagrama de componentes            | ![Componentes](pngs/componentes.png) |
+| Diagrama de secuencia              | ![Secuencia](pngs/secuencia.png) |
+| Casos de prueba                    | ./CasosDePrueba.md          |
+| Deuda técnica / code smells        | ./DeudaTecnica.md           |
+
+
 ## Instrucciones de instalacion y ejecucion
 
 ### Requisitos previos
