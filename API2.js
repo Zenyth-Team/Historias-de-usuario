@@ -2,11 +2,46 @@ const express = require('express');
 const router = express.Router();
 const db = require('./db'); // Comparte la misma conexión
 
-/**
- * @swagger
- * /api/v1/productos:
- * post:
- * summary: Crear un nuevo producto (HU1 y HU2)
+/**                                                                                                                                           
+ * @swagger                                                                                                                                   
+ * /api/v1/productos:                                                                                                                         
+ *   post:                                                                                                                                    
+ *     summary: Registrar un nuevo producto en el inventario                                                                                  
+ *     description: Crea un nuevo registro de producto en la base de datos con un código SKU único, nombre, descripción opcional, precio y    
+  stock inicial. El producto se registra con estado 'Activo' por defecto.                                                                ----------
+ *     requestBody:                                                                                                                           
+ *       required: true                                                                                                                       
+ *       content:                                                                                                                             
+ *         application/json:                                                                                                                  
+ *           schema:                                                                                                                          
+ *             type: object                                                                                                                   
+ *             required:                                                                                                                      
+ *               - sku                                                                                                                        
+ *               - nombre                                                                                                                     
+ *               - precio                                                                                                                     
+ *               - stock                                                                                                                      
+ *             properties:                                                                                                                    
+ *               sku:                                                                                                                         
+ *                 type: string                                                                                                               
+ *                 example: "FER-001"                                                                                                         
+ *               nombre:                                                                                                                      
+ *                 type: string                                                                                                               
+ *                 example: "Martillo de Uña 16oz"                                                                                            
+ *               precio:                                                                                                                      
+ *                 type: number                                                                                                               
+ *                 example: 12.50                                                                                                             
+ *               stock:                                                                                                                       
+ *                 type: integer                                                                                                              
+ *                 example: 50                                                                                                                
+ *     responses:                                                                                                                             
+ *       201:                                                                                                                                 
+ *         description: Producto creado exitosamente.                                                                                         
+ *       400:                                                                                                                                 
+ *         description: Petición inválida debido a campos faltantes o valores de precio/stock negativos.                                      
+ *       409:                                                                                                                                 
+ *         description: Conflicto porque el código SKU ya se encuentra registrado en el sistema.                                              
+ *       500:                                                                                                                                 
+ *         description: Error interno del servidor.                                                                                           
  */
 router.post('/productos', (req, res) => {
     const { sku, nombre, descripcion, precio, stock } = req.body;
