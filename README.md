@@ -74,7 +74,7 @@ Ver detalle de arquitectura y decisiones de diseño en: [arquitectura.md](./arqu
 | Diagrama de componentes            | ![Componentes](componentes.png.png) |
 | Diagrama de secuencia              | ![Secuencia](secuencia.png.png) |
 | Casos de prueba                    | [Casos de prueba](./Casosdeprueba.md) |
-| Deuda técnica / code smells        | [Deuda técnica / code smells](./DeudaTecnica.md)           |
+| Deuda técnica / code smells        | [Deuda técnica / code smells](./DeudaTecnica.md)  |
 
 
 ## Instrucciones de instalacion y ejecucion
