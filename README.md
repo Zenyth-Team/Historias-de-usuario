@@ -73,7 +73,7 @@ Ver detalle de arquitectura y decisiones de diseño en: [arquitectura.md](./arqu
 | Diagrama de despliegue y comp.     | ![Despliegue](despliegue.png.png) |
 | Diagrama de componentes            | ![Componentes](componentes.png.png) |
 | Diagrama de secuencia              | ![Secuencia](secuencia.png.png) |
-| Casos de prueba                    | ./CasosDePrueba.md          |
+| Casos de prueba                    | ./Casosdeprueba.md          |
 | Deuda técnica / code smells        | ./DeudaTecnica.md           |
 
 
