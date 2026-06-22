@@ -68,7 +68,7 @@ Ver detalle de arquitectura y decisiones de diseño en: [arquitectura.md](./arqu
 |------------------------------------|-----------------------------|
 | Modelo de dominio                  | ![Dominio](pngs/dominio.png) |
 | Diagrama de casos de uso           | ![CasosUso](pngs/DiagramaCasosDeUso.png.png) |
-| Especificación de HU               | ./EspecificacionHU.md       |
+| Especificación de HU               | [Especificación de Historias de Usuario](./EspecificacionHU.md)  |
 | Diagrama de estados                | ![Estados](pngs/estados.png) |
 | Diagrama de despliegue y comp.     | ![Despliegue](despliegue.png.png) |
 | Diagrama de componentes            | ![Componentes](componentes.png.png) |
