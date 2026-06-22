@@ -71,7 +71,7 @@ Ver detalle de arquitectura y decisiones de diseño en: [arquitectura.md](./arqu
 | Especificación de HU               | ./EspecificacionHU.md       |
 | Diagrama de estados                | ![Estados](pngs/estados.png) |
 | Diagrama de despliegue y comp.     | ![Despliegue](despliegue.png.png) |
-| Diagrama de componentes            | ![Componentes](pngs/componentes.png) |
+| Diagrama de componentes            | ![Componentes](componentes.png.png) |
 | Diagrama de secuencia              | ![Secuencia](secuencia.png.png) |
 | Casos de prueba                    | ./CasosDePrueba.md          |
 | Deuda técnica / code smells        | ./DeudaTecnica.md           |
