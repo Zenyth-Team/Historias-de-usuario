@@ -66,7 +66,7 @@ Ver detalle de arquitectura y decisiones de diseño en: [arquitectura.md](./arqu
 ## Artefactos del proyecto
 | Artefacto                          | Ubicación / enlace          |
 |------------------------------------|-----------------------------|
-| Modelo de dominio                  | ![Dominio](pngs/dominio.png) |
+| Modelo de dominio                  | ![Modelo de Dominio](./pngs/ModeloDeDomnio.png) |
 | Diagrama de casos de uso           | ![CasosUso](pngs/DiagramaCasosDeUso.png.png) |
 | Especificación de HU               | [Especificación de Historias de Usuario](./EspecificacionHU.md)  |
 | Diagrama de estados                | ![Diagrama de estados](./pngs/DiagramaDeEstados.png) |
